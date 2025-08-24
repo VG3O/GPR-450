@@ -25,7 +25,7 @@
 #include "../a3_SceneRenderUtils.h"
 #include "../a3_SceneObject.h"
 
-//#include "A3_DEMO/_animation/a3_HierarchyState.h"//****TO-DO-ANIM: UNCOMMENT ME
+#include "A3_DEMO/_animation/a3_HierarchyState.h"
 
 
 //-----------------------------------------------------------------------------
@@ -329,7 +329,7 @@ void a3demo_uploadHierarchyGraphics(
 	a3bufferFixedRefill(ubo_transform_skin, 0, t_skin_size, transform_t_skin);
 	a3bufferFixedRefillOffset(ubo_transform_skin, 0, t_skin_size, dq_skin_size, transform_dq_skin);
 }
-/*//****TO-DO-ANIM: UNCOMMENT ME
+
 void a3demo_updateHierarchyGraphics(
 	a3mat4* transform_mvp_joints, a3mat4* transform_mvp_bones, a3mat4* transform_t_skin, a3dualquat* transform_dq_skin,
 	a3ui32 const max_transforms, a3mat4 const mvp_obj, a3_HierarchyState const* activeHS)
@@ -388,6 +388,6 @@ void a3demo_updateHierarchyGraphics(
 		a3demo_mat2dquat_safe(dq_skin->Q, t_skin->m);
 	}
 }
-*/
+
 
 //-----------------------------------------------------------------------------

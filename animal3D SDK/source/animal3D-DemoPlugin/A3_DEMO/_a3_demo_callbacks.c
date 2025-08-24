@@ -117,12 +117,12 @@ void a3starter_load(a3_DemoState const* demoState, a3_Scene_Starter* scene);
 void a3starter_loadValidate(a3_DemoState const* demoState, a3_Scene_Starter* scene);
 void a3starter_unload(a3_DemoState const* demoState, a3_Scene_Starter* scene);
 void a3starter_unloadValidate(a3_DemoState const* demoState, a3_Scene_Starter* scene);
-/*//****TO-DO-ANIM: UNCOMMENT ME
+
 void a3animation_load(a3_DemoState const* demoState, a3_Scene_Animation* scene);
 void a3animation_loadValidate(a3_DemoState const* demoState, a3_Scene_Animation* scene);
 void a3animation_unload(a3_DemoState const* demoState, a3_Scene_Animation* scene);
 void a3animation_unloadValidate(a3_DemoState const* demoState, a3_Scene_Animation* scene);
-*/
+
 
 //-----------------------------------------------------------------------------
 // miscellaneous functions
@@ -159,11 +159,11 @@ inline void a3demo_releaseText(a3_DemoState* demoState)
 void a3demo_load(a3_DemoState* demoState)
 {
 	// demo modes
-	demoState->scene = demoState_modeStarter;//****TO-DO-ANIM: COMMENT ME
-	//demoState->scene = demoState_modeAnimation;//****TO-DO-ANIM: UNCOMMENT ME
+	//demoState->scene = demoState_modeStarter;
+	demoState->scene = demoState_modeAnimation;
 	demoState->sceneCallbacksPtr = demoState->sceneCallbacks + demoState->scene;
 	a3starter_load(demoState, demoState->scene_starter);
-	//a3animation_load(demoState, demoState->scene_animation);//****TO-DO-ANIM: UNCOMMENT ME
+	a3animation_load(demoState, demoState->scene_animation);
 
 
 	// geometry
@@ -197,20 +197,20 @@ void a3demo_unload(a3_DemoState* demoState)
 	a3demo_unloadFramebuffers(demoState);
 
 	a3starter_unload(demoState, demoState->scene_starter);
-	//a3animation_unload(demoState, demoState->scene_animation);//****TO-DO-ANIM: UNCOMMENT ME
+	a3animation_unload(demoState, demoState->scene_animation);
 }
 
 void a3scene_loadValidate(a3_DemoState* demoState)
 {
 	demoState->sceneCallbacksPtr = demoState->sceneCallbacks + demoState->scene;
 	a3starter_loadValidate(demoState, demoState->scene_starter);
-	//a3animation_loadValidate(demoState, demoState->scene_animation);//****TO-DO-ANIM: UNCOMMENT ME
+	a3animation_loadValidate(demoState, demoState->scene_animation);
 }
 
 void a3scene_unloadValidate(a3_DemoState* demoState)
 {
 	a3starter_unloadValidate(demoState, demoState->scene_starter);
-	//a3animation_unloadValidate(demoState, demoState->scene_animation);//****TO-DO-ANIM: UNCOMMENT ME
+	a3animation_unloadValidate(demoState, demoState->scene_animation);
 }
 
 void a3demo_idle(a3_DemoState* demoState, a3f64 const dt)

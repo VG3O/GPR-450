@@ -51,11 +51,11 @@
 void a3starter_render_controls(a3_DemoState const* demoState, a3_Scene_Starter const* scene,
 	a3_TextRenderer const* text, a3vec4 const col,
 	a3f32 const textAlign, a3f32 const textDepth, a3f32 const textOffsetDelta, a3f32 textOffset);
-/*//****TO-DO-ANIM: UNCOMMMENT ME
+
 void a3animation_render_controls(a3_DemoState const* demoState, a3_Scene_Animation const* scene,
 	a3_TextRenderer const* text, a3vec4 const col,
 	a3f32 const textAlign, a3f32 const textDepth, a3f32 const textOffsetDelta, a3f32 textOffset);
-*/
+
 
 // display current mode controls
 void a3demo_render_controls_global(a3_DemoState const* demoState,
@@ -94,7 +94,7 @@ void a3demo_render_controls(a3_DemoState const* demoState,
 	// display mode info
 	a3byte const* modeText[demoState_mode_max] = {
 		"STARTER SCENE",
-		//"ANIMATION SCENE",//****TO-DO-ANIM: UNCOMMENT ME
+		"ANIMATION SCENE",
 	};
 
 	// demo mode
@@ -110,11 +110,11 @@ void a3demo_render_controls(a3_DemoState const* demoState,
 	case demoState_modeStarter:
 		a3starter_render_controls(demoState, demoState->scene_starter, text, col, textAlign, textDepth, textOffsetDelta, textOffset);
 		break;
-	/*//****TO-DO-ANIM: UNCOMMENT ME
+	
 	case demoState_modeAnimation:
 		a3animation_render_controls(demoState, demoState->scene_animation, text, col, textAlign, textDepth, textOffsetDelta, textOffset);
 		break;
-	*/
+	
 	}
 
 	// global/input-dependent controls

@@ -179,8 +179,8 @@ void a3demo_loadGeometry(a3_DemoState *demoState)
 
 	// file streaming (if requested)
 	a3_FileStream fileStream[1] = { 0 };
-	const a3byte *const geometryStream = "./data/gpro25_base_geom.dat";
-	const a3boolean force_disable_streaming = false;
+	const a3byte *const geometryStream = "./data/gpro25_base_geom_active.dat";
+	const a3boolean force_disable_streaming = true;
 
 	// geometry data
 	a3_GeometryData displayShapesData[7] = { 0 };
@@ -286,10 +286,28 @@ void a3demo_loadGeometry(a3_DemoState *demoState)
 		{
 			if (loadedShapes[i].skinWeightsFilePath)
 			{
-				a3byte *nodeNames[128] = { 0 };
-				a3ui32 nodeCount = 0;
-				//a3hierarchyGetNodeNames(nodeNames, demoState->scene_animation->hierarchy_skel);//****TO-DO-ANIM: UNCOMMENT ME
-				a3modelLoadOBJSkinWeights(loadedModelsData + i, loadedShapes[i].modelFilePath, loadedShapes[i].flag, loadedShapes[i].skinWeightsFilePath, nodeNames, nodeCount, loadedShapes[i].transform);
+				const a3_Hierarchy* hierarchy = NULL;
+
+//-----------------------------------------------------------------------------
+//****TO-DO-ANIM-PREP-2: SELECT HIERARCHY
+//-----------------------------------------------------------------------------
+				
+
+
+//-----------------------------------------------------------------------------
+//****END-TO-DO-PREP-2
+//-----------------------------------------------------------------------------
+				
+				if (hierarchy && hierarchy->nodes)
+				{
+					a3byte* nodeNames[128] = { 0 };
+					a3ui32 const nodeCount = a3hierarchyGetNodeNames(nodeNames, hierarchy);
+					a3modelLoadOBJSkinWeights(loadedModelsData + i, loadedShapes[i].modelFilePath, loadedShapes[i].flag, loadedShapes[i].skinWeightsFilePath, nodeNames, nodeCount, loadedShapes[i].transform);
+				}
+				else
+				{
+					a3modelLoadOBJ(loadedModelsData + i, loadedShapes[i].modelFilePath, loadedShapes[i].flag, loadedShapes[i].transform);
+				}
 			}
 			else
 			{
