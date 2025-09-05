@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LocalDebuggerWorkingDirectory>$(ANIMAL3D_SDK)bin\$(PlatformToolset)\$(PlatformTarget)\$(Configuration)\</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerEnvironment>PATH=%PATH%;$(DEV_SDK_DIR)bin\$(PlatformTarget);$(DEV_SDK_DIR)bin\$(PlatformTarget)\$(PlatformToolset)\$(Configuration)</LocalDebuggerEnvironment>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommand>$(LocalDebuggerWorkingDirectory)animal3D-DemoPlayerApp.exe</LocalDebuggerCommand>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LocalDebuggerWorkingDirectory>$(ANIMAL3D_SDK)bin\$(PlatformToolset)\$(PlatformTarget)\$(Configuration)\</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerEnvironment>PATH=%PATH%;$(DEV_SDK_DIR)bin\$(PlatformTarget);$(DEV_SDK_DIR)bin\$(PlatformTarget)\$(PlatformToolset)\$(Configuration)</LocalDebuggerEnvironment>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommand>$(LocalDebuggerWorkingDirectory)animal3D-DemoPlayerApp.exe</LocalDebuggerCommand>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LocalDebuggerWorkingDirectory>$(ANIMAL3D_SDK)bin\$(PlatformToolset)\$(PlatformTarget)\$(Configuration)\</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerEnvironment>PATH=%PATH%;$(DEV_SDK_DIR)bin\$(PlatformTarget);$(DEV_SDK_DIR)bin\$(PlatformTarget)\$(PlatformToolset)\$(Configuration)</LocalDebuggerEnvironment>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommand>$(LocalDebuggerWorkingDirectory)animal3D-DemoPlayerApp.exe</LocalDebuggerCommand>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LocalDebuggerWorkingDirectory>$(ANIMAL3D_SDK)bin\$(PlatformToolset)\$(PlatformTarget)\$(Configuration)\</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerEnvironment>PATH=%PATH%;$(DEV_SDK_DIR)bin\$(PlatformTarget);$(DEV_SDK_DIR)bin\$(PlatformTarget)\$(PlatformToolset)\$(Configuration)</LocalDebuggerEnvironment>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommand>$(LocalDebuggerWorkingDirectory)animal3D-DemoPlayerApp.exe</LocalDebuggerCommand>
+  </PropertyGroup>
+</Project>
